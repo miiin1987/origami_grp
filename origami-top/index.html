@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORIGAMI GRP | AIで、「やりたい」をカタチに。個人向けAIコンサル・企業向け制作</title>
+<meta name="description" content="AIを学んで仕事や副業に活かしたい方へのマンツーマンAIコンサルティングと、企業向けのHP制作・AI動画・ライティング・業務自動化。実業を営むORIGAMI GRPが、あなたの「やりたい」をAIでカタチにします。">
+<link rel="icon" href="assets/emblem-red.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700;800&family=Noto+Serif+JP:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#16213F;--ink:#0D0D11;--cream:#EFE6D6;--paper:#F3EEE4;--text:#1E2233;--gold:linear-gradient(135deg,#E4CF9C,#C3A262 55%,#8E6F33);--goldT:linear-gradient(120deg,#E4CF9C,#C3A262 50%,#B08A45);--g1:#E4CF9C;--g2:#C3A262}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--navy);color:var(--paper);font:16.5px/1.95 "Noto Serif JP","Yu Mincho","Hiragino Mincho ProN",serif;letter-spacing:.04em;overflow-x:clip}
+a{color:inherit}
+.mincho{font-family:"Shippori Mincho B1","Noto Serif JP",serif}
+.en{font-family:"Cormorant Garamond",serif;font-style:italic;letter-spacing:.08em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+.ph{display:inline-block}
+.gold{background:var(--goldT);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(13,13,17,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:38px;height:38px}
+.logo b{display:block;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:18px;letter-spacing:.18em;line-height:1.2;white-space:nowrap}
+.logo small{display:block;font-size:10.5px;letter-spacing:.14em;color:var(--g1);line-height:1.4}
+.nav{display:flex;align-items:center;gap:10px}
+.nav a{text-decoration:none;font-family:"Shippori Mincho B1",serif;font-size:13.5px;font-weight:600;letter-spacing:.1em;padding:10px 16px;white-space:nowrap}
+.nav .ln{border:1px solid rgba(228,207,156,.45);color:var(--paper)}
+.nav .ln:hover{border-color:var(--g1);color:var(--g1)}
+.nav .cta{background:var(--gold);color:var(--ink);border-radius:2px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;min-height:calc(100svh - 68px);display:flex;align-items:center;padding:72px 0 96px}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 78% 40%,rgba(195,162,98,.16),transparent 70%),radial-gradient(50% 60% at 10% 100%,rgba(0,0,0,.35),transparent 70%)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(228,207,156,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(228,207,156,.05) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 40%,#000);mask-image:linear-gradient(90deg,transparent,#000 40%,#000)}
+.heroIn{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center;width:100%}
+.eyebrow{display:flex;align-items:center;gap:14px;margin:0 0 28px;font-family:"Shippori Mincho B1",serif;font-size:13.5px;color:var(--g1);letter-spacing:.2em}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--g1)}
+h1{margin:0;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(32px,4.6vw,60px);line-height:1.45;letter-spacing:.08em;color:var(--paper)}
+h1 span{display:block}
+.lead{margin:28px 0 0;max-width:560px;font-size:16px;color:rgba(243,238,228,.85)}
+.crane{position:relative;aspect-ratio:1;max-width:460px;justify-self:center;width:100%}
+.crane svg.c{position:absolute;inset:8%;width:84%;height:84%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));}
+.crane svg.r{position:absolute;inset:0;width:100%;height:100%;animation:spin 30s linear infinite}
+.scroll{text-decoration:none;position:absolute;left:50%;bottom:24px;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;color:var(--g1);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll i{width:1px;height:44px;background:linear-gradient(var(--g1),transparent);animation:drop 2s ease-in-out infinite}
+@keyframes float{0%{transform:translate(0,0) rotate(-6deg) scale(1)}25%{transform:translate(-22px,-30px) rotate(2deg) scale(1.06)}50%{transform:translate(0,-12px) rotate(7deg) scale(1.02)}75%{transform:translate(22px,-34px) rotate(-1deg) scale(1.07)}100%{transform:translate(0,0) rotate(-6deg) scale(1)}}
+@keyframes logoFly{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-4px) rotate(8deg)}}
+
+@keyframes shine{0%{background-position:200% 50%}100%{background-position:-100% 50%}}
+.shineT{background:linear-gradient(110deg,#C3A262 0%,#E4CF9C 30%,#FFF6DC 42%,#E4CF9C 54%,#B08A45 80%,#C3A262 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 3.2s linear infinite}
+@keyframes rise{0%{transform:translate(0,0) scale(.6);opacity:0}15%{opacity:1}100%{transform:translate(var(--dx),-260px) scale(1.1);opacity:0}}
+.spark{position:absolute;bottom:18%;border-radius:50%;background:#E4CF9C;box-shadow:0 0 10px #E4CF9C;animation:rise var(--t) ease-out infinite}
+@keyframes sweep{0%{transform:translateX(-130%) skewX(-20deg)}60%,100%{transform:translateX(330%) skewX(-20deg)}}
+.card::before,.nav .cta::before,.go::before{content:"";position:absolute;top:0;bottom:0;left:0;width:30%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,246,220,.35),rgba(255,255,255,0));animation:sweep 3.6s ease-in-out infinite;pointer-events:none;z-index:2}
+.cB::before{background:linear-gradient(90deg,rgba(195,162,98,0),rgba(195,162,98,.22),rgba(195,162,98,0));animation-delay:1.2s}
+.nav .cta,.go{position:relative;overflow:hidden}
+.go::before{animation-delay:.6s}
+
+.bird{position:relative;display:block;perspective:600px}
+.bird svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.bw{will-change:transform;animation:2.4s cubic-bezier(.45,0,.25,1) infinite}
+.wl{transform-origin:44% 55%;animation-name:beatL}
+.wr{transform-origin:64% 55%;animation-name:beatR}
+.bb{animation:lift 2.4s cubic-bezier(.45,0,.25,1) infinite}
+@keyframes beatL{0%,100%{transform:rotateZ(0) rotateY(0)}45%{transform:rotateZ(-10deg) rotateY(38deg)}}
+@keyframes beatR{0%,100%{transform:rotateZ(0) rotateY(0)}45%{transform:rotateZ(10deg) rotateY(-38deg)}}
+@keyframes lift{0%,100%{transform:translateY(0)}45%{transform:translateY(-1.5%)}}
+.crane .bird.c{position:absolute;inset:8%;width:84%;height:84%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.lgb{width:38px;height:38px;flex:0 0 38px}
+.lgb .bw,.lgb .bb{animation-duration:2.4s}
+
+.hero-crane{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 24px 36px rgba(0,0,0,.45))}
+.hc-float,.hc-wing,.hc-p,.hc-spark polygon,.hc-ring{transform-box:view-box}
+.hc-wing{transform-origin:30px 30px}
+.hc-ring{transform-origin:32px 30px;animation:hc-ring-in 1.6s ease-out both}
+.hc-p{transform-origin:30px 34px;animation:hc-fold .9s cubic-bezier(.2,.8,.2,1) var(--d) both}
+.hc-float{animation:hc-float 7s ease-in-out 1.4s infinite}
+.hc-wing-l{animation:hc-flap-l 4.2s ease-in-out 1.4s infinite}
+.hc-wing-r{animation:hc-flap-r 4.2s ease-in-out 1.4s infinite}
+.hc-spark polygon{transform-origin:center;transform-box:fill-box;opacity:0;animation:hc-twinkle 3.6s ease-in-out calc(1.6s + var(--s)) infinite}
+.hc-r1,.hc-r2,.hc-r3,.hc-pulse{transform-box:view-box;transform-origin:32px 30px}
+.hc-r1{animation:hc-spin 16s linear infinite}
+.hc-r2{animation:hc-spin 24s linear infinite reverse}
+.hc-r3{animation:hc-spin 9s linear infinite}
+.hc-pulse{animation:hc-pulse 3.2s ease-out 1.6s infinite;opacity:0}
+@keyframes hc-pulse{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(1.18)}}
+@keyframes hc-ring-in{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
+@keyframes hc-spin{to{transform:rotate(360deg)}}
+@keyframes hc-fold{from{opacity:0;transform:scale(.2) rotate(-25deg)}to{opacity:1;transform:none}}
+@keyframes hc-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes hc-flap-l{0%,100%{transform:rotate(0)}50%{transform:rotate(-7deg)}}
+@keyframes hc-flap-r{0%,100%{transform:rotate(0)}50%{transform:rotate(6deg)}}
+@keyframes hc-twinkle{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1.2)}}
+.crane svg.r2{position:absolute;inset:10%;width:80%;height:80%;animation:spin 18s linear infinite reverse}
+@keyframes glowP{0%,100%{opacity:.35;transform:scale(.9)}50%{opacity:.8;transform:scale(1.08)}}
+.halo{position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,rgba(228,207,156,.35),rgba(228,207,156,0) 65%);animation:glowP 3s ease-in-out infinite}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.up{animation:up .9s cubic-bezier(.2,.8,.2,1) both}
+
+/* entrance */
+.ent{background:var(--cream);color:var(--text);padding:120px 0}
+.secHead{text-align:center;margin-bottom:56px}
+.secHead .en{display:block;font-size:20px;color:#A8873F}
+.secHead h2{margin:6px 0 14px;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:clamp(26px,3.2vw,36px);letter-spacing:.08em;line-height:1.6}
+.secHead p{margin:0;font-size:15px;color:#4A4E5E}
+.cards{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.card{position:relative;display:flex;flex-direction:column;text-decoration:none;border-radius:4px;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.card:hover{transform:translateY(-8px);box-shadow:0 28px 56px rgba(22,33,63,.28)}
+.cardTop{position:relative;padding:44px 40px 36px}
+.cardTop::after{content:"";position:absolute;left:40px;right:40px;bottom:0;height:1px;background:var(--gold);opacity:.6}
+.who{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.who .en{font-size:18px}
+.who b{font-family:"Shippori Mincho B1",serif;font-size:clamp(24px,2.6vw,30px);font-weight:800;letter-spacing:.1em}
+.cardTop h3{margin:22px 0 0;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:clamp(20px,2vw,24px);line-height:1.7;letter-spacing:.06em}
+.cardBody{padding:28px 40px 40px;display:flex;flex-direction:column;gap:20px;flex:1}
+.cardBody p{margin:0;font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{font-family:"Shippori Mincho B1",serif;font-size:12.5px;font-weight:600;padding:5px 14px;letter-spacing:.08em}
+.go{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 24px;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:15px;letter-spacing:.12em;border-radius:2px}
+.go .ar{display:inline-block;width:38px;height:1px;background:currentColor;position:relative;transition:width .3s}
+.go .ar::after{content:"";position:absolute;right:0;top:-4px;width:9px;height:9px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.card:hover .go .ar{width:54px}
+.cP{background:var(--navy);color:var(--paper)}
+.cP .who .en{color:var(--g1)}
+.cP .tags li{border:1px solid rgba(228,207,156,.5);color:var(--g1)}
+.cP .go{background:var(--gold);color:var(--ink)}
+.cB{background:#FFFFFF;color:var(--text);border:1px solid rgba(168,135,63,.35)}
+.cB .who .en{color:#A8873F}
+.cB .cardTop{background:linear-gradient(180deg,#FBF8F2,#FFFFFF)}
+.cB .tags li{border:1px solid rgba(22,33,63,.25);color:var(--navy)}
+.cB .go{background:var(--navy);color:var(--paper)}
+.ext{font-size:12px;opacity:.7;letter-spacing:.06em}
+
+/* about */
+.about{background:#1F1E23;color:var(--paper);padding:120px 0}
+.aboutIn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.about h2{margin:6px 0 24px;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:clamp(26px,3.2vw,36px);line-height:1.7;letter-spacing:.08em}
+.about .en{font-size:20px;color:var(--g1)}
+.about p{margin:0 0 16px;color:rgba(243,238,228,.82);font-size:15.5px}
+.biz{list-style:none;margin:0;padding:0;border-top:1px solid rgba(228,207,156,.25)}
+.biz li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid rgba(228,207,156,.25)}
+.biz .en{font-size:16px}
+.biz b{display:block;font-family:"Shippori Mincho B1",serif;font-size:17px;letter-spacing:.08em}
+.biz span{font-size:13.5px;color:rgba(243,238,228,.7)}
+
+/* contact */
+.contact{background:var(--navy);padding:110px 0;text-align:center;position:relative;overflow:hidden}
+.contact h2{margin:6px 0 16px;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:clamp(26px,3.4vw,40px);letter-spacing:.1em;line-height:1.6}
+.contact .en{font-size:20px;color:var(--g1)}
+.contact p{margin:0 0 36px;color:rgba(243,238,228,.8)}
+.cbtn{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.cbtn a{display:inline-flex;align-items:center;gap:14px;min-height:56px;padding:0 32px;text-decoration:none;font-family:"Shippori Mincho B1",serif;font-weight:700;letter-spacing:.12em;border-radius:2px}
+.cbtn .a1{background:var(--gold);color:var(--ink)}
+.cbtn .a2{border:1px solid rgba(228,207,156,.55);color:var(--paper)}
+.cbtn .line{background:#06C755;border-color:#06C755;color:#FFFFFF}
+.lineDot{font-family:Arial,sans-serif;font-weight:800;font-size:11px;letter-spacing:0;background:#FFFFFF;color:#06C755;padding:3px 6px;border-radius:6px}
+.contact small{display:block;margin-top:22px;font-size:12.5px;color:rgba(243,238,228,.65)}
+
+footer{background:var(--ink);color:rgba(243,238,228,.7);padding:48px 0;font-size:13px}
+.ft{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
+.ft nav{display:flex;flex-wrap:wrap;gap:8px 24px}
+.ft a{text-decoration:none}
+.ft a:hover{color:var(--g1)}
+
+.rv{opacity:1}
+@supports (animation-timeline: view()){.rv{animation:up linear both;animation-timeline:view();animation-range:entry 0% entry 50%}}
+
+@media (max-width:900px){
+.heroIn{grid-template-columns:minmax(0,1fr)}
+.crane{max-width:300px;order:-1;margin-bottom:-8px}
+.cards,.aboutIn{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){
+.wrap{padding:0 20px}
+.nav .ln{display:none}
+.nav .cta{padding:10px 14px;font-size:12.5px}
+.logo small{display:none}
+.hero{padding:40px 0 88px;min-height:auto}
+.crane{max-width:220px}
+h1{letter-spacing:.06em}
+.cardTop{padding:34px 24px 28px}.cardTop::after{left:24px;right:24px}
+.cardBody{padding:24px 24px 28px}
+.biz li{grid-template-columns:minmax(0,1fr);gap:2px}
+.scroll{display:none}
+.go{font-size:13.5px;letter-spacing:.06em;padding:16px 18px}.go .ar{width:28px;flex:0 0 auto}
+.ent,.about{padding:88px 0}
+}
+@media (prefers-reduced-motion: reduce){.hc-ring,.hc-r1,.hc-r2,.hc-r3,.hc-pulse,.hc-p,.hc-float,.hc-wing-l,.hc-wing-r,.hc-spark polygon,.crane svg.r,.crane svg.r2,.halo,.spark,.shineT,.card::before,.nav .cta::before,.go::before,.scroll i,.up,.rv{animation:none}.card{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<linearGradient id="gA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E4CF9C"/><stop offset=".55" stop-color="#C3A262"/><stop offset="1" stop-color="#8E6F33"/></linearGradient>
+<linearGradient id="gB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C3A262"/><stop offset="1" stop-color="#7A5E28"/></linearGradient>
+<symbol id="crane" viewBox="0 0 64 64">
+<polygon points="30,30 20,40 4,8" fill="url(#gA)"/>
+<polygon points="30,30 38,38 20,40" fill="url(#gB)"/>
+<polygon points="30,30 46,36 58,4" fill="url(#gA)" opacity=".85"/>
+<polygon points="30,30 46,36 38,38" fill="#A8873F"/>
+<polygon points="20,40 38,38 32,50" fill="url(#gB)"/>
+<polygon points="38,38 46,36 32,50" fill="#7A5E28"/>
+<polygon points="20,40 24,44 6,28" fill="url(#gA)"/>
+<polygon points="6,28 9,27 3,34" fill="#C3A262"/>
+<polygon points="46,36 42,40 62,26" fill="url(#gB)"/>
+</symbol>
+</defs>
+</svg>
+
+<header>
+<div class="wrap hd">
+<a class="logo" href="#top" aria-label="ORIGAMI GRP トップ"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#crane"/></svg><span><b>ORIGAMI GRP</b><small>AI × 実業のチーム</small></span></a>
+<nav class="nav" aria-label="メイン">
+<a class="ln" href="https://origami-grp.vercel.app/" target="_blank" rel="noopener">個人のお客様</a>
+<a class="ln" href="https://origamigrp-d6xo.vercel.app/" target="_blank" rel="noopener">法人のお客様</a>
+<a class="cta" href="#contact">お問い合わせ</a>
+</nav>
+</div>
+</header>
+
+<main id="top">
+<section class="hero">
+<div class="grid" aria-hidden="true"></div>
+<div class="wrap heroIn">
+<div>
+<p class="eyebrow up">個人のAI学習から、企業の業務改善まで</p>
+<h1><span class="up" style="animation-delay:.1s">AIで、</span><span class="up" style="animation-delay:.25s"><span class="shineT"><span class="ph">「やりたい」を</span><span class="ph">カタチに。</span></span></span></h1>
+<p class="lead up" style="animation-delay:.45s"><span class="ph">AIを学んで、</span><span class="ph">仕事や副業に活かしたい方も。</span><span class="ph">発信や業務の手間を減らしたい</span><span class="ph">企業さまも。</span><span class="ph">実業を営むORIGAMI GRPが、</span><span class="ph">あなたの「やりたい」を</span><span class="ph">AIでカタチにするお手伝いをします。</span></p>
+</div>
+<div class="crane" aria-hidden="true">
+<svg class="hero-crane" viewBox="0 0 64 64">
+<g class="hc-ring" fill="none" stroke="#C3A262">
+<circle class="hc-pulse" cx="32" cy="30" r="29" stroke-opacity=".5" stroke-width=".3"/>
+<g class="hc-r1"><circle cx="32" cy="30" r="29" stroke-opacity=".45" stroke-width=".3" stroke-dasharray="20 4 2 4"/><circle cx="32" cy="1" r=".9" fill="#E4CF9C" stroke="none"/><circle cx="3" cy="30" r=".5" fill="#C3A262" stroke="none"/></g>
+<g class="hc-r2"><circle cx="32" cy="30" r="31.5" stroke-opacity=".35" stroke-width=".18" stroke-dasharray=".6 1.4"/><circle cx="32" cy="61.5" r=".6" fill="#E4CF9C" stroke="none"/></g>
+<g class="hc-r3"><circle cx="32" cy="30" r="26" stroke-opacity=".25" stroke-width=".15" stroke-dasharray="8 30"/></g>
+</g>
+<g class="hc-float">
+<g class="hc-wing hc-wing-l"><polygon class="hc-p" style="--d:.1s" points="30,30 20,40 4,8" fill="url(#gA)"/></g>
+<polygon class="hc-p" style="--d:.35s" points="30,30 38,38 20,40" fill="url(#gB)"/>
+<g class="hc-wing hc-wing-r"><polygon class="hc-p" style="--d:.2s" points="30,30 46,36 58,4" fill="url(#gA)" opacity=".85"/></g>
+<polygon class="hc-p" style="--d:.45s" points="30,30 46,36 38,38" fill="#A8873F"/>
+<polygon class="hc-p" style="--d:.55s" points="20,40 38,38 32,50" fill="url(#gB)"/>
+<polygon class="hc-p" style="--d:.65s" points="38,38 46,36 32,50" fill="#7A5E28"/>
+<polygon class="hc-p" style="--d:.75s" points="20,40 24,44 6,28" fill="url(#gA)"/>
+<polygon class="hc-p" style="--d:.85s" points="6,28 9,27 3,34" fill="#C3A262"/>
+<polygon class="hc-p" style="--d:.8s" points="46,36 42,40 62,26" fill="url(#gB)"/>
+</g>
+<g class="hc-spark" fill="#E4CF9C">
+<polygon style="--s:0s" points="10,52 11,54 10,56 9,54"/>
+<polygon style="--s:1.3s" points="54,46 55,48 54,50 53,48"/>
+<polygon style="--s:2.4s" points="40,8 41,10 40,12 39,10"/>
+</g>
+</svg>
+</div>
+</div>
+<a class="scroll" href="#entrance" aria-label="入り口へ"><span class="en">Scroll</span><i></i></a>
+</section>
+
+<section class="ent" id="entrance">
+<div class="wrap">
+<div class="secHead rv">
+<span class="en">Entrance</span>
+<h2><span class="ph">ご利用の目的を</span><span class="ph">お選びください</span></h2>
+<p><span class="ph">個人の方と法人の方で、</span><span class="ph">ご案内のページが分かれています。</span></p>
+</div>
+<div class="cards">
+<a class="card cP rv" href="https://origami-grp.vercel.app/" target="_blank" rel="noopener">
+<div class="cardTop">
+<div class="who"><b>個人のお客様</b><span class="en">For Individuals</span></div>
+<h3><span class="ph">一人で悩まず、</span><span class="ph">AIを一緒に。</span></h3>
+</div>
+<div class="cardBody">
+<p><span class="ph">AIを学びたい方、</span><span class="ph">仕事や副業に活かしたい方へ。</span><span class="ph">あなたの強み・興味・今の環境に合わせて、</span><span class="ph">マンツーマンで伴走します。</span></p>
+<ul class="tags"><li>AI初心者歓迎</li><li>マンツーマン</li><li>オンライン相談</li></ul>
+<span class="go">個人向けサイトへ<span class="ar" aria-hidden="true"></span></span>
+</div>
+</a>
+<a class="card cB rv" href="https://origamigrp-d6xo.vercel.app/" target="_blank" rel="noopener">
+<div class="cardTop">
+<div class="who"><b>法人のお客様</b><span class="en">For Business</span></div>
+<h3><span class="ph">時間を生み、</span><span class="ph">本当にやりたい仕事へ。</span></h3>
+</div>
+<div class="cardBody">
+<p><span class="ph">ホームページ制作、</span><span class="ph">AIナレーション動画、</span><span class="ph">ライティング、</span><span class="ph">業務の自動化まで。</span><span class="ph">発信と業務の「めんどう」を、</span><span class="ph">まとめてご相談いただけます。</span></p>
+<ul class="tags"><li>HP制作</li><li>AI動画</li><li>ライティング</li><li>業務自動化</li></ul>
+<span class="go">法人向けサイトへ<span class="ar" aria-hidden="true"></span></span>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="wrap aboutIn">
+<div class="rv">
+<span class="en">About us</span>
+<h2><span class="ph">机上の空論ではなく、</span><span class="ph">実業で使えるAIを。</span></h2>
+<p><span class="ph">ORIGAMI GRPは、</span><span class="ph">自ら複数の事業を運営しながら、</span><span class="ph">現場の「めんどう」をAIと仕組みで減らしてきました。</span></p>
+<p><span class="ph">日々の売上・集客・事務作業に向き合っているからこそ、</span><span class="ph">明日から使えるAI活用をご提案できます。</span></p>
+</div>
+<ul class="biz rv">
+<li><span class="en">Restaurant</span><div><b>Standing Bar Nishiizu Yeah! Yeah! Yeah!</b><span>JR大船駅東口すぐの立ち飲み屋</span></div></li>
+<li><span class="en">School</span><div><b>ライティングスクール</b><span>初心者からプロまで、文章力を磨く実践型スクール</span></div></li>
+<li><span class="en">Real Estate</span><div><b>不動産事業</b><span>売買・賃貸・仲介・開発・管理</span></div></li>
+<li><span class="en">Energy</span><div><b>クロノス</b><span>電子ブレーカーによる電気基本料金の見直し</span></div></li>
+</ul>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="wrap rv">
+<span class="en">Contact</span>
+<h2><span class="ph">まずは、</span><span class="ph">話してみませんか。</span></h2>
+<p><span class="ph">個人・法人どちらのご相談も、</span><span class="ph">お気軽にどうぞ。</span><span class="ph">無理な勧誘はいたしません。</span></p>
+<div class="cbtn">
+<a class="a1" href="tel:07084588553">お電話 070-8458-8553</a>
+<a class="a2 line" href="LINE_URL" target="_blank" rel="noopener"><span class="lineDot" aria-hidden="true">LINE</span>公式LINEで相談する</a>
+</div>
+<small>受付時間 10:00〜23:00</small>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap ft">
+<a class="logo" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true" style="width:30px;height:30px"><use href="#crane"/></svg><span><b style="font-size:15px">ORIGAMI GRP</b></span></a>
+<nav aria-label="フッター">
+<a href="https://origami-grp.vercel.app/" target="_blank" rel="noopener">個人のお客様</a>
+<a href="https://origamigrp-d6xo.vercel.app/" target="_blank" rel="noopener">法人のお客様</a>
+<a href="#contact">お問い合わせ</a>
+</nav>
+<p style="margin:0;flex:1 1 100%">東京都足立区青井4-30-12 スカイレジデンス蒼102 ／ © 2026 ORIGAMI GRP</p>
+</div>
+</footer>
+</body>
+</html>
