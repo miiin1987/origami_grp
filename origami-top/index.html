@@ -157,6 +157,19 @@ h1 span{display:block}
 .contact h2{margin:6px 0 16px;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:clamp(26px,3.4vw,40px);letter-spacing:.1em;line-height:1.6}
 .contact .en{font-size:20px;color:var(--g1)}
 .contact p{margin:0 0 36px;color:rgba(243,238,228,.8)}
+
+.heroBtns{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.hb{flex:1 1 230px;max-width:300px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:68px;padding:12px 64px 12px 24px;text-decoration:none;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:15px;letter-spacing:.08em;border-radius:2px;transition:transform .25s,box-shadow .25s}
+.hb small{font-size:11.5px;letter-spacing:.14em;opacity:.8;font-weight:600}
+.hb:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.hb .ar{position:absolute;right:22px;top:50%;width:26px;height:1px;background:currentColor;transition:width .3s}
+.hb .ar::after{content:"";position:absolute;right:0;top:-4px;width:9px;height:9px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.hb:hover .ar{width:36px}
+.hbP{background:var(--gold);color:var(--ink)}
+.hbP::before{content:"";position:absolute;top:0;bottom:0;left:0;width:30%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,246,220,.45),rgba(255,255,255,0));animation:sweep 3.6s ease-in-out infinite}
+.hbB{border:1px solid rgba(228,207,156,.6);color:var(--paper);background:rgba(13,13,17,.25)}
+.hbB:hover{border-color:var(--g1);color:var(--g1)}
+@media (max-width:600px){.heroBtns{flex-direction:column}.hb{width:100%;max-width:none;flex:none}}
 .cbtn{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
 .cbtn a{display:inline-flex;align-items:center;gap:14px;min-height:56px;padding:0 32px;text-decoration:none;font-family:"Shippori Mincho B1",serif;font-weight:700;letter-spacing:.12em;border-radius:2px}
 .cbtn .a1{background:var(--gold);color:var(--ink)}
@@ -235,6 +248,10 @@ h1{letter-spacing:.06em}
 <p class="eyebrow up">個人のAI学習から、企業の業務改善まで</p>
 <h1><span class="up" style="animation-delay:.1s">AIで、</span><span class="up" style="animation-delay:.25s"><span class="shineT"><span class="ph">「やりたい」を</span><span class="ph">カタチに。</span></span></span></h1>
 <p class="lead up" style="animation-delay:.45s"><span class="ph">AIを学んで、</span><span class="ph">仕事や副業に活かしたい方も。</span><span class="ph">発信や業務の手間を減らしたい</span><span class="ph">企業さまも。</span><span class="ph">実業を営むORIGAMI GRPが、</span><span class="ph">あなたの「やりたい」を</span><span class="ph">AIでカタチにするお手伝いをします。</span></p>
+<div class="heroBtns up" style="animation-delay:.6s">
+<a class="hb hbP" href="https://origami-grp.vercel.app/" target="_blank" rel="noopener"><small>個人のお客様</small>AIを学びたい方へ<span class="ar" aria-hidden="true"></span></a>
+<a class="hb hbB" href="https://origamigrp-d6xo.vercel.app/" target="_blank" rel="noopener"><small>法人のお客様</small>制作・業務改善のご相談へ<span class="ar" aria-hidden="true"></span></a>
+</div>
 </div>
 <div class="crane" aria-hidden="true">
 <svg class="hero-crane" viewBox="0 0 64 64">
