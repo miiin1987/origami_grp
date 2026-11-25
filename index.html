@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
 <style>
+@media (max-width:600px){.price3 .pc{padding:16px 10px !important}.price3 .pc>p:first-child{font-size:11px !important;white-space:nowrap}.price3 .pn{font-size:clamp(22px,7vw,30px) !important;white-space:nowrap}.price3 .pn span{font-size:12px !important}}
 section[id]{scroll-margin-top:80px}
 @media (max-width:760px){.newsBar{gap:6px 12px !important;padding:14px 18px !important}.newsBar>span:first-child{flex:1 1 100%;font-size:13px}.newsBar>button,.newsBar>span:last-child{display:none}.newsBar .news{flex-wrap:nowrap !important;flex:1 1 100% !important;gap:10px !important;font-size:13px !important}.newsBar .news>span{flex:0 0 auto}.newsBar .news>span:last-child{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.heroTx{bottom:40px !important}}
 @media (max-width:760px){.hdRow{flex-wrap:nowrap !important;padding:12px 16px !important}.hdRow nav>a:not(.sq){display:none}.hdRow nav{flex-wrap:nowrap !important}.hdRow nav .sq{white-space:nowrap}.hdRow nav a[aria-label="メニュー"]{display:none !important}.heroH{font-size:clamp(20px,6vw,30px) !important}.hdRow>a span{white-space:nowrap}}
@@ -219,10 +220,10 @@ a{color:#141A2E}a:hover{color:#1D3FD8}
 </div>
 <div class="rv" style="margin-top: 48px">
 <p style="margin: 0 0 16px; font-size: 15px; font-weight: 900">制作費の目安</p>
-<div class="g3" style="gap: 3px; background: rgba(29,63,216,0.18)">
-<div style="background: #FFFFFF; padding: 28px 30px"><p style="margin: 0 0 4px; font-size: 13px; font-weight: 700">小規模ツール</p><p style="margin: 0; font-family: Inter, sans-serif; font-weight: 800; font-size: 44px; line-height: 1.2; color: {{blue}}">3<span style="font-family: 'Noto Sans JP', sans-serif; font-size: 18px">万円〜</span></p></div>
-<div style="background: #FFFFFF; padding: 28px 30px"><p style="margin: 0 0 4px; font-size: 13px; font-weight: 700">複数業務の連携</p><p style="margin: 0; font-family: Inter, sans-serif; font-weight: 800; font-size: 44px; line-height: 1.2; color: {{blue}}">10<span style="font-family: 'Noto Sans JP', sans-serif; font-size: 18px">万円〜</span></p></div>
-<div style="background: #FFFFFF; padding: 28px 30px"><p style="margin: 0 0 4px; font-size: 13px; font-weight: 700">大規模開発</p><p style="margin: 0; font-family: Inter, sans-serif; font-weight: 800; font-size: 44px; line-height: 1.2; color: {{blue}}">30<span style="font-family: 'Noto Sans JP', sans-serif; font-size: 18px">万円〜</span></p></div>
+<div class="price3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; background: rgba(29,63,216,0.18)">
+<div class="pc" style="background: #FFFFFF; padding: 28px 30px"><p style="margin: 0 0 4px; font-size: 13px; font-weight: 700">小規模ツール</p><p style="margin: 0; font-family: Inter, sans-serif; font-weight: 800; font-size: 44px; line-height: 1.2; color: {{blue}}" class="pn">3<span style="font-family: 'Noto Sans JP', sans-serif; font-size: 18px">万円〜</span></p></div>
+<div class="pc" style="background: #FFFFFF; padding: 28px 30px"><p style="margin: 0 0 4px; font-size: 13px; font-weight: 700">複数業務の連携</p><p style="margin: 0; font-family: Inter, sans-serif; font-weight: 800; font-size: 44px; line-height: 1.2; color: {{blue}}" class="pn">10<span style="font-family: 'Noto Sans JP', sans-serif; font-size: 18px">万円〜</span></p></div>
+<div class="pc" style="background: #FFFFFF; padding: 28px 30px"><p style="margin: 0 0 4px; font-size: 13px; font-weight: 700">大規模開発</p><p style="margin: 0; font-family: Inter, sans-serif; font-weight: 800; font-size: 44px; line-height: 1.2; color: {{blue}}" class="pn">30<span style="font-family: 'Noto Sans JP', sans-serif; font-size: 18px">万円〜</span></p></div>
 </div>
 <p style="margin: 10px 0 0; font-size: 12px; color: #5A6278">税込。内容・規模に応じて個別にお見積もりします。</p>
 </div>
